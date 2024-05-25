@@ -30,41 +30,41 @@ correct = ['Helsinki','William','Black, green, blue, yellow and red','The 1950s 
 
 prize = ['0','1000','2000','5000','10000','20000','1000000','200000','500000','1000000','5000000','10000000']
 
-## print("-----------WELCOME TO THE GAME OF KBC----------")
+import numpy as np
+import pyrebase as pb   
+print("-----------SWAGAT HAI AAPKA KAUN BANEGA CROREPATI ME ----------")
 flag = 1;
 variable = 0;
-p1 = (input("Enter the players name:"))
+p1 = (input("MANYAWAR KA NAAM:"))
 print("----------CHALIYIEN SHURU KARTEY HAIN---------")
 for i in range(0,len(questions)):
+    ques = np.random.choice(questions,12,replace = False).tolist()
     print()
+    print("Yeh Sawaal ",prize[i],"ruppes ke liye hai")
     print("Question",i+1)
-    print(i+1,questions[i])
+    print(i+1,ques[i])
+    tql=ques[i]
+    qos=questions.index(tql)
     print("Options:")
     for j in range(0,4):
-            print('\t',j+1,options[i][j])
+            print('\t',j+1,options[qos][j])
     right = int(input("Enter the correct options number :\n"))
-        # print('i---->', i)
-        # print('option i---->', options[i])
-    if options[i][right-1] == correct[i]:
+    if options[qos][right-1] == correct[qos]:
             print("Hence your option is correct\n")
     elif i<=4:
         print("Incorrect")
-        print("You got 0 rupees")
+        print("AAP AAJ GHR LEKE JAA RHE HAI SHUNYA RASHI")
         break
     elif i>=4 and i<=8:
-        print("Incorrect")
-        print("You won the cash prize of :", prize[4])
+        print("MANYAWAR YEH UTTAR GALAT HAI:")
+        print("AAP AAJ GHR LEKE JAA RHE HAI:",prize[4],"RUPPES")
         break
     elif i>=8:
-        print("incorrect")
-        print("You won the cash prize of :", prize[8])
-        break
-    else:
-        print("Incorrect")
-        print("You lose the game , you are getting:",prize[i])
+        print("MANYAWAR YEH UTTAR GALAT HAI:")
+        print("AAP AAJ GHR LEKE JAA RHE HAI:",prize[8],"RUPPES")
         break
     if i == 4 or i == 8:
-        print("You have completed the level and you won the cash prize of:");
+        print("AAPNE YEH PADAV PAAR KR LIYA HAI AUR AB AAP GHR LEKE HI JAYENGEY KUCH MULYA KI RASHI:");
         print(prize[i])
     if i<len(questions)-1:
         ask = input("Do You Want to Proceed :Y/N").upper()
@@ -76,6 +76,8 @@ for i in range(0,len(questions)):
             break  
             
 if(i==len(questions)):
-    print("-------------Hence you won the game -----")
-print("-------------AAP GHR LEKE JAA RHE HAI----- ")
-print(prize[i])
+    print("-------------MANYAWAR AAP JEET GYE HAI POOREY EK CRORE RUPPPES -----")
+    print("-------------AAP GHR LEKE JAA RHE HAI----- ")
+    print(prize[i])
+
+
