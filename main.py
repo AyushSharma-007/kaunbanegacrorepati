@@ -29,7 +29,28 @@ correct = ['Helsinki','William','Black, green, blue, yellow and red','The 1950s 
             'Africa','Diphu, Assam','Physiology or Medicine','Nazi Party','Film Finance Corporation']
 
 prize = ['0','1000','2000','5000','10000','20000','1000000','200000','500000','1000000','5000000','10000000']
+import pyttsx3 
+converter = pyttsx3.init()  
+converter.setProperty('rate', 125) 
+converter.setProperty('volume', 1.0) 
+# converter.setProperty('language',hindi) 
+converter.say("WELCOME TO THE GAME !!! OF WHO WILL BECOME THE MILLIONAIRE ") 
+converter.say("I'M YOUR HOST! THE AI") 
 
+
+
+converter.runAndWait() 
+
+voices = converter.getProperty('voices') 
+  
+for voice in voices: 
+    # to get the info. about various voices in our PC  
+    print("Voice:") 
+    print("ID: %s" %voice.id) 
+    print("Name: %s" %voice.name) 
+    print("Age: %s" %voice.age) 
+    print("Gender:female %s" %voice.gender) 
+    print("Languages Known: %s" %voice.languages)
 import numpy as np
 import pyrebase as pb   
 print("-----------SWAGAT HAI AAPKA KAUN BANEGA CROREPATI ME ----------")
