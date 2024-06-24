@@ -1,3 +1,4 @@
+// lifeline will be added to it
 questions = ["What is the capital of Finland?",
              "What is the name of Bridget Jones' baby in the third Bridget Jones film?",
              "Which five colours make up the Olympic rings?",
